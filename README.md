@@ -33,6 +33,6 @@ LaunchScreenを表示した後、**画面はそのままで**初期化用のStar
 * Xcode 13.4.1
 * iOS (iPadOS) 13.0 or later
 
-# Spec / スペック
+# Specs / スペック
 * Dark Mode supported / ダークモード対応
 * iPad supported / iPad対応
