@@ -1,0 +1,2 @@
+# LaunchScreenSample
+起動時にLaunchScreenの表示を継続しながら初期化を行う
