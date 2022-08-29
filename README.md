@@ -30,5 +30,9 @@ LaunchScreenを表示した後、**画面はそのままで**初期化用のStar
 [Qiita (written in Japanese) LaunchScreenを表示したままにしてViewControllerを動かす](https://qiita.com/Hackenbacker/items/8abcdbb77c42f3670749)
 
 # Execution Environment / 実行環境
-Xcode 13.4.1<br>
-iOS 13.0 or later
+* Xcode 13.4.1
+* iOS (iPadOS) 13.0 or later
+
+# Spec / スペック
+* Dark Mode supported / ダークモード対応
+* iPad supported / iPad対応
