@@ -57,10 +57,14 @@ struct ViewUtil {
 
     /// Returns the key window in the app's window arrays.
     static var keyWindow: UIWindow? {
-        UIApplication.shared.connectedScenes
+        let scenes = UIApplication.shared.connectedScenes
             .filter { $0.activationState == .foregroundActive }
             .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first(where: { $0.isKeyWindow })
+
+        if #available(iOS 15.0, *) {
+            return scenes.compactMap { $0.keyWindow }.first
+        } else {
+            return scenes.flatMap { $0.windows }.first { $0.isKeyWindow }
+        }
     }
 }
