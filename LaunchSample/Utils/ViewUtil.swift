@@ -18,7 +18,7 @@ import UIKit
 
 /// Utilities for UIView and UIViewController.
 struct ViewUtil {
-
+    
     private init() {} // prevent instantiation.
 
     /// Retrieves a view controller with its name.
@@ -27,7 +27,7 @@ struct ViewUtil {
     ///   - storyboardName: A name of storyboard associated with the view controller. Default is nil.
     /// - Returns: Retrieved view controller.
     static func retrieveViewController(_ viewControllerName: String, in storyboardName: String? = nil) -> UIViewController {
-
+        
         let storyboardName: String = storyboardName ?? viewControllerName
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: viewControllerName)
@@ -41,30 +41,34 @@ struct ViewUtil {
     static func retrieveViewController<T: UIViewController>(_ clazz: T.Type, in storyboardName: String? = nil) -> T {
         retrieveViewController(clazz.className, in: storyboardName) as! T
     }
-
-    /// Returns the launch screen's view. (not including a view controller)
-    /// See: https://qiita.com/Hackenbacker/items/8abcdbb77c42f3670749   (written in Japanese)
-    static var launchScreen: UIView? {
-        guard let name = InfoPlistUtil.launchStoryboardName else {
-            return nil
-        }
-        let storyboard = UIStoryboard(name: name, bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        let retainedView = viewController?.view // retain Launch Screen
-        viewController?.view = nil // Cut reference from viewController to Launch Screen
-        return retainedView
-    }
-
+    
     /// Returns the key window in the app's window arrays.
     static var keyWindow: UIWindow? {
         let scenes = UIApplication.shared.connectedScenes
             .filter { $0.activationState == .foregroundActive }
             .compactMap { $0 as? UIWindowScene }
-
+        
         if #available(iOS 15.0, *) {
             return scenes.compactMap { $0.keyWindow }.first
         } else {
             return scenes.flatMap { $0.windows }.first { $0.isKeyWindow }
         }
+    }
+    
+    /// Retrieves a view with its object type.
+    /// - Parameters:
+    ///   - clazz: Type of the view.
+    ///   - fromNib: The name of the nib file.
+    /// - Returns: Retrieved view.
+    static func retrieveView<T: UIView>(_ clazz: T.Type, fromNib: String? = nil) -> T? {
+        let nibName: String = fromNib ?? clazz.className
+        let nib = UINib(nibName: nibName, bundle: nil)
+        
+        if let view = nib.instantiate(withOwner: nil, options: nil)
+            .first(where: { ($0 as AnyObject).isKind(of: clazz) }) {
+            return (view as! T)
+        }
+        
+        return nil
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C500BA2F291A1FFB00377761 /* LaunchScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500BA2E291A1FFB00377761 /* LaunchScreenUtil.swift */; };
 		C51FB5FD232DD2290080732E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51FB5FC232DD2290080732E /* AppDelegate.swift */; };
 		C51FB5FF232DD2290080732E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51FB5FE232DD2290080732E /* SceneDelegate.swift */; };
 		C51FB601232DD2290080732E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51FB600232DD2290080732E /* MainViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C500BA2E291A1FFB00377761 /* LaunchScreenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenUtil.swift; sourceTree = "<group>"; };
 		C51FB5F9232DD2290080732E /* LaunchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51FB5FC232DD2290080732E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C51FB5FE232DD2290080732E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				C5CE141728BA1FFD002D9CBE /* NSObject+className.swift */,
 				C599F6A22332D4F7007F2E3C /* RootViewControllerSegue.swift */,
 				C51FB610232DD3E80080732E /* ViewUtil.swift */,
+				C500BA2E291A1FFB00377761 /* LaunchScreenUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				C51FB611232DD3E80080732E /* ViewUtil.swift in Sources */,
 				C599F6A123318AC1007F2E3C /* InfoPlistUtil.swift in Sources */,
 				C599F6A32332D4F7007F2E3C /* RootViewControllerSegue.swift in Sources */,
+				C500BA2F291A1FFB00377761 /* LaunchScreenUtil.swift in Sources */,
 				C5CE141828BA1FFD002D9CBE /* NSObject+className.swift in Sources */,
 				C51FB613232DD54C0080732E /* StartupViewController.swift in Sources */,
 				C51FB5FF232DD2290080732E /* SceneDelegate.swift in Sources */,

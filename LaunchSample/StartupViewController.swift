@@ -23,7 +23,7 @@ final class StartupViewController: UIViewController {
         super.loadView()
 
         // LaunchScreenを自身のviewに設定する.
-        if let launchScreen = ViewUtil.launchScreen {
+        if let launchScreen = LaunchScreenUtil.launchScreen {
             view = launchScreen
         }
     }
