@@ -19,6 +19,7 @@
 		C5CE141828BA1FFD002D9CBE /* NSObject+className.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE141728BA1FFD002D9CBE /* NSObject+className.swift */; };
 		C5CE141B28BACABC002D9CBE /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE141A28BACABC002D9CBE /* MainViewController.storyboard */; };
 		C5CE141D28BACB33002D9CBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CE141C28BACB33002D9CBE /* LaunchScreen.storyboard */; };
+		C5E8EF742920B2B80052ED6F /* Task+sleepSeconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8EF732920B2B80052ED6F /* Task+sleepSeconds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C5CE141728BA1FFD002D9CBE /* NSObject+className.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+className.swift"; sourceTree = "<group>"; };
 		C5CE141A28BACABC002D9CBE /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		C5CE141C28BACB33002D9CBE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5E8EF732920B2B80052ED6F /* Task+sleepSeconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+sleepSeconds.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				C599F6A22332D4F7007F2E3C /* RootViewControllerSegue.swift */,
 				C51FB610232DD3E80080732E /* ViewUtil.swift */,
 				C500BA2E291A1FFB00377761 /* LaunchScreenUtil.swift */,
+				C5E8EF732920B2B80052ED6F /* Task+sleepSeconds.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E8EF742920B2B80052ED6F /* Task+sleepSeconds.swift in Sources */,
 				C51FB601232DD2290080732E /* MainViewController.swift in Sources */,
 				C51FB5FD232DD2290080732E /* AppDelegate.swift in Sources */,
 				C51FB611232DD3E80080732E /* ViewUtil.swift in Sources */,

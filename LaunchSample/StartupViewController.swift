@@ -37,16 +37,22 @@ final class StartupViewController: UIViewController {
         
         // 3秒後にMainViewControlleに画面遷移する.
         // このViewControllerは解放される.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let mainViewController = ViewUtil.retrieveViewController(MainViewController.self)
-            RootViewControllerSegue(
-                source: self,
-                destination: mainViewController
-            )
-            .perform()
+        Task {
+            try await Task.sleep(seconds: 3)
+            replaceWithMainViewController()
         }
     }
 
+    /// Replaces the rootViewController with the MainViewController.
+    private func replaceWithMainViewController() {
+        let mainViewController = ViewUtil.retrieveViewController(MainViewController.self)
+        RootViewControllerSegue(
+            source: self,
+            destination: mainViewController
+        )
+        .perform()
+    }
+    
     /// MainViewControllerに遷移した後にメモリから解放されることを確認する.
     deinit {
         print("StartupViewController: \(#function)")
