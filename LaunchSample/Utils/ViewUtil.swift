@@ -41,20 +41,23 @@ struct ViewUtil {
     static func retrieveViewController<T: UIViewController>(_ clazz: T.Type, in storyboardName: String? = nil) -> T {
         retrieveViewController(clazz.className, in: storyboardName) as! T
     }
-    
+
     /// Returns the key window in the app's window arrays.
     static var keyWindow: UIWindow? {
-        let scenes = UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .compactMap { $0 as? UIWindowScene }
-        
         if #available(iOS 15.0, *) {
-            return scenes.compactMap { $0.keyWindow }.first
+            return UIApplication.shared.connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+                .first
         } else {
-            return scenes.flatMap { $0.windows }.first { $0.isKeyWindow }
+            return UIApplication.shared.connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first { $0.isKeyWindow }
         }
     }
-    
+
     /// Retrieves a view with its object type.
     /// - Parameters:
     ///   - clazz: Type of the view.
